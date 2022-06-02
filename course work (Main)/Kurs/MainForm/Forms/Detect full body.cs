@@ -16,6 +16,7 @@ namespace MainForm.Forms
     public partial class Detect_full_body : Form
     {
         private static CascadeClassifier classifier = new CascadeClassifier("haarcascade_fullbody.xml");
+        private string filePath = string.Empty;
         public Detect_full_body()
         {
             InitializeComponent();
@@ -46,9 +47,9 @@ namespace MainForm.Forms
                 DialogResult res = openFileDialog1.ShowDialog();
                 if (res == DialogResult.OK)
                 {
-                    string path = openFileDialog1.FileName;
+                    filePath = openFileDialog1.FileName;
 
-                    pictureBoxDetectFullBody.Image = Image.FromFile(path);
+                    pictureBoxDetectFullBody.Image = Image.FromFile(filePath);
                 }
             }
             catch (Exception ex)
@@ -61,21 +62,28 @@ namespace MainForm.Forms
         {
             try
             {
-                var bitmap = new Bitmap(pictureBoxDetectFullBody.Image);
-                Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
-                Rectangle[] faces = classifier.DetectMultiScale(grayImage, 1.4, 0);
-
-                foreach (Rectangle face in faces)
+                if (string.IsNullOrEmpty(filePath) || String.IsNullOrWhiteSpace(filePath))
                 {
-                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    throw new Exception("Картинка не выбрана!");
+                }
+                else
+                {
+                    var bitmap = new Bitmap(pictureBoxDetectFullBody.Image);
+                    Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
+                    Rectangle[] faces = classifier.DetectMultiScale(grayImage, 1.4, 0);
+
+                    foreach (Rectangle face in faces)
                     {
-                        using (Pen pen = new Pen(Color.Yellow, 3))
+                        using (Graphics graphics = Graphics.FromImage(bitmap))
                         {
-                            graphics.DrawRectangle(pen, face);
+                            using (Pen pen = new Pen(Color.Yellow, 3))
+                            {
+                                graphics.DrawRectangle(pen, face);
+                            }
                         }
                     }
+                    pictureBoxDetectFullBody.Image = bitmap;
                 }
-                pictureBoxDetectFullBody.Image = bitmap;
             }
             catch (Exception ex)
             {
@@ -97,6 +105,7 @@ namespace MainForm.Forms
         private void btnClearPicture_Click(object sender, EventArgs e)
         {
             pictureBoxDetectFullBody.Image = null;
+            filePath = string.Empty;
         }
     }
 }

@@ -83,7 +83,7 @@ namespace MainForm.Forms
                 }
                 else if(comboBoxDetectText.SelectedItem == null)
                 {
-                    throw new Exception("Язык не выбран");
+                    throw new Exception("Язык не выбран!");
                 }
                 else
                 {
@@ -110,6 +110,7 @@ namespace MainForm.Forms
         private void btnClearPicture_Click(object sender, EventArgs e)
         {
             pictureBoxDetectText.Image = null;
+            filePath = string.Empty;
         }
 
         private void btnClearText_Click(object sender, EventArgs e)

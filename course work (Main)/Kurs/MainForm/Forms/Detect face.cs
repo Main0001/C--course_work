@@ -16,6 +16,7 @@ namespace MainForm.Forms
     public partial class Detect_face : Form
     {
         private static CascadeClassifier classifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+        private string filePath = string.Empty;
         public Detect_face()
         {
             InitializeComponent();
@@ -45,9 +46,9 @@ namespace MainForm.Forms
                 DialogResult res = openFileDialog1.ShowDialog();
                 if (res == DialogResult.OK)
                 {
-                    string path = openFileDialog1.FileName;
+                    filePath = openFileDialog1.FileName;
 
-                    pictureBoxDetectFace.Image = Image.FromFile(path);
+                    pictureBoxDetectFace.Image = Image.FromFile(filePath);
                 }
             }
             catch (Exception ex)
@@ -60,21 +61,28 @@ namespace MainForm.Forms
         {
             try
             {
-                var bitmap = new Bitmap(pictureBoxDetectFace.Image);
-                Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
-                Rectangle[] faces = classifier.DetectMultiScale(grayImage, 1.4, 0); //1.4 - увеличение изображения на 40% (1.0 - 0%)
-
-                foreach(Rectangle face in faces)
+                if (string.IsNullOrEmpty(filePath) || String.IsNullOrWhiteSpace(filePath))
                 {
-                    using(Graphics graphics = Graphics.FromImage(bitmap)) // используем Graphics для рисования прямоугольников
+                    throw new Exception("Картинка не выбрана!");
+                }
+                else
+                {
+                    var bitmap = new Bitmap(pictureBoxDetectFace.Image);
+                    Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
+                    Rectangle[] faces = classifier.DetectMultiScale(grayImage, 1.4, 0); //1.4 - увеличение изображения на 40% (1.0 - 0%)
+
+                    foreach (Rectangle face in faces)
                     {
-                        using(Pen pen = new Pen(Color.Yellow, 3)) //создаем кисточку, которой будем рисовать (3 - толщина)
+                        using (Graphics graphics = Graphics.FromImage(bitmap)) // используем Graphics для рисования прямоугольников
                         {
-                            graphics.DrawRectangle(pen, face);
+                            using (Pen pen = new Pen(Color.Yellow, 3)) //создаем кисточку, которой будем рисовать (3 - толщина)
+                            {
+                                graphics.DrawRectangle(pen, face);
+                            }
                         }
                     }
+                    pictureBoxDetectFace.Image = bitmap;
                 }
-                pictureBoxDetectFace.Image = bitmap;
             }
             catch (Exception ex)
             {
@@ -95,6 +103,7 @@ namespace MainForm.Forms
         private void btnClearPicture_Click(object sender, EventArgs e)
         {
             pictureBoxDetectFace.Image = null;
+            filePath = string.Empty;
         }
     }
 }
