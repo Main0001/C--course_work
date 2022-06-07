@@ -33,7 +33,6 @@
             this.btnDetectText = new System.Windows.Forms.Button();
             this.btnDetectGeometricShapes = new System.Windows.Forms.Button();
             this.btnDetectContours = new System.Windows.Forms.Button();
-            this.btnDetectFullBody = new System.Windows.Forms.Button();
             this.btnDetectFace = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.labelProgramName = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.labelDetectTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -52,16 +52,16 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnDetectText);
             this.panelMenu.Controls.Add(this.btnDetectGeometricShapes);
             this.panelMenu.Controls.Add(this.btnDetectContours);
-            this.panelMenu.Controls.Add(this.btnDetectFullBody);
             this.panelMenu.Controls.Add(this.btnDetectFace);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(309, 421);
+            this.panelMenu.Size = new System.Drawing.Size(309, 439);
             this.panelMenu.TabIndex = 0;
             // 
             // btnDetectText
@@ -72,7 +72,7 @@
             this.btnDetectText.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDetectText.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectText.Image")));
             this.btnDetectText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectText.Location = new System.Drawing.Point(0, 315);
+            this.btnDetectText.Location = new System.Drawing.Point(0, 255);
             this.btnDetectText.Name = "btnDetectText";
             this.btnDetectText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectText.Size = new System.Drawing.Size(309, 60);
@@ -91,7 +91,7 @@
             this.btnDetectGeometricShapes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDetectGeometricShapes.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectGeometricShapes.Image")));
             this.btnDetectGeometricShapes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectGeometricShapes.Location = new System.Drawing.Point(0, 255);
+            this.btnDetectGeometricShapes.Location = new System.Drawing.Point(0, 195);
             this.btnDetectGeometricShapes.Name = "btnDetectGeometricShapes";
             this.btnDetectGeometricShapes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectGeometricShapes.Size = new System.Drawing.Size(309, 60);
@@ -110,7 +110,7 @@
             this.btnDetectContours.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDetectContours.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectContours.Image")));
             this.btnDetectContours.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectContours.Location = new System.Drawing.Point(0, 195);
+            this.btnDetectContours.Location = new System.Drawing.Point(0, 135);
             this.btnDetectContours.Name = "btnDetectContours";
             this.btnDetectContours.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectContours.Size = new System.Drawing.Size(309, 60);
@@ -120,25 +120,6 @@
             this.btnDetectContours.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetectContours.UseVisualStyleBackColor = true;
             this.btnDetectContours.Click += new System.EventHandler(this.btnDetectContours_Click);
-            // 
-            // btnDetectFullBody
-            // 
-            this.btnDetectFullBody.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDetectFullBody.FlatAppearance.BorderSize = 0;
-            this.btnDetectFullBody.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetectFullBody.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDetectFullBody.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectFullBody.Image")));
-            this.btnDetectFullBody.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectFullBody.Location = new System.Drawing.Point(0, 135);
-            this.btnDetectFullBody.Name = "btnDetectFullBody";
-            this.btnDetectFullBody.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDetectFullBody.Size = new System.Drawing.Size(309, 60);
-            this.btnDetectFullBody.TabIndex = 3;
-            this.btnDetectFullBody.Text = "   Detect  full body from image";
-            this.btnDetectFullBody.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectFullBody.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDetectFullBody.UseVisualStyleBackColor = true;
-            this.btnDetectFullBody.Click += new System.EventHandler(this.btnDetectFullBody_Click);
             // 
             // btnDetectFace
             // 
@@ -272,14 +253,33 @@
             this.panelDesktop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelDesktop.Location = new System.Drawing.Point(309, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(692, 346);
+            this.panelDesktop.Size = new System.Drawing.Size(692, 364);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 315);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(309, 60);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "   Detect pedestrian from video";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 421);
+            this.ClientSize = new System.Drawing.Size(1001, 439);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -302,7 +302,6 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnDetectGeometricShapes;
         private System.Windows.Forms.Button btnDetectContours;
-        private System.Windows.Forms.Button btnDetectFullBody;
         private System.Windows.Forms.Button btnDetectFace;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label labelDetectTitle;
@@ -313,6 +312,7 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnDetectText;
+        private System.Windows.Forms.Button button1;
     }
 }
 

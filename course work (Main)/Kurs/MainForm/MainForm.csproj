@@ -64,12 +64,6 @@
     <Compile Include="Forms\base.Designer.cs">
       <DependentUpon>base.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Detect car numbers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Detect car numbers.Designer.cs">
-      <DependentUpon>Detect car numbers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Detect contours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +88,12 @@
     <Compile Include="Forms\Detect geometric shapes.Designer.cs">
       <DependentUpon>Detect geometric shapes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Detect pedestrian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detect pedestrian.Designer.cs">
+      <DependentUpon>Detect pedestrian.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Detect text.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,9 +106,6 @@
     <EmbeddedResource Include="Forms\base.resx">
       <DependentUpon>base.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Detect car numbers.resx">
-      <DependentUpon>Detect car numbers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detect contours.resx">
       <DependentUpon>Detect contours.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detect geometric shapes.resx">
       <DependentUpon>Detect geometric shapes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Detect pedestrian.resx">
+      <DependentUpon>Detect pedestrian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detect text.resx">
       <DependentUpon>Detect text.cs</DependentUpon>
@@ -156,9 +156,7 @@
     </None>
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Car Numbers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

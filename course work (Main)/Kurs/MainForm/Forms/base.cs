@@ -1,13 +1,7 @@
 ﻿using MainForm.Constants;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MainForm
@@ -159,13 +153,6 @@ namespace MainForm
             base.Height = FormConstants.HEIGHT;
             base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
-        private void btnDetectFullBody_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.Detect_full_body(), sender);
-            base.Width = FormConstants.WIDTH;
-            base.Height = FormConstants.HEIGHT;
-            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
-        }
         private void btnDetectContours_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Detect_contours(), sender);
@@ -196,6 +183,14 @@ namespace MainForm
             base.Width = FormConstants.WIDTH;
             base.Height = FormConstants.HEIGHT;
             base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.MinimumSize = new System.Drawing.Size(1325, 502);
+            this.Width = 1325;
+            this.Height = 502;
+            OpenChildForm(new Forms.Detect_pedestrian(), sender);
         }
     }
 }

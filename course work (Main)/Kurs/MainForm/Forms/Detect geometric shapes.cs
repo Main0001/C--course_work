@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Emgu.CV;
+using Emgu.CV.Structure;
+using Emgu.CV.Util;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Emgu.CV.Structure;
-using Emgu.CV;
-using Emgu.CV.Util;
 
 namespace MainForm.Forms
 {

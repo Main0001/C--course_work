@@ -34,6 +34,8 @@
             this.buttonFaceDetectSave = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnClearPicture = new System.Windows.Forms.Button();
+            this.labelLanguage = new System.Windows.Forms.Label();
+            this.comboBoxObjectDetect = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectFace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // buttonFaceDetect
             // 
             this.buttonFaceDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFaceDetect.Location = new System.Drawing.Point(34, 118);
+            this.buttonFaceDetect.Location = new System.Drawing.Point(34, 163);
             this.buttonFaceDetect.Name = "buttonFaceDetect";
             this.buttonFaceDetect.Size = new System.Drawing.Size(200, 38);
             this.buttonFaceDetect.TabIndex = 3;
@@ -76,7 +78,7 @@
             // buttonFaceDetectSave
             // 
             this.buttonFaceDetectSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFaceDetectSave.Location = new System.Drawing.Point(34, 182);
+            this.buttonFaceDetectSave.Location = new System.Drawing.Point(34, 219);
             this.buttonFaceDetectSave.Name = "buttonFaceDetectSave";
             this.buttonFaceDetectSave.Size = new System.Drawing.Size(200, 38);
             this.buttonFaceDetectSave.TabIndex = 4;
@@ -92,7 +94,7 @@
             // btnClearPicture
             // 
             this.btnClearPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearPicture.Location = new System.Drawing.Point(34, 244);
+            this.btnClearPicture.Location = new System.Drawing.Point(34, 285);
             this.btnClearPicture.Name = "btnClearPicture";
             this.btnClearPicture.Size = new System.Drawing.Size(200, 54);
             this.btnClearPicture.TabIndex = 5;
@@ -100,11 +102,35 @@
             this.btnClearPicture.UseVisualStyleBackColor = true;
             this.btnClearPicture.Click += new System.EventHandler(this.btnClearPicture_Click);
             // 
+            // labelLanguage
+            // 
+            this.labelLanguage.AutoSize = true;
+            this.labelLanguage.Location = new System.Drawing.Point(31, 100);
+            this.labelLanguage.Name = "labelLanguage";
+            this.labelLanguage.Size = new System.Drawing.Size(78, 16);
+            this.labelLanguage.TabIndex = 16;
+            this.labelLanguage.Text = "Object type:";
+            // 
+            // comboBoxObjectDetect
+            // 
+            this.comboBoxObjectDetect.FormattingEnabled = true;
+            this.comboBoxObjectDetect.Items.AddRange(new object[] {
+            "Face",
+            "Full body",
+            "Glasses"});
+            this.comboBoxObjectDetect.Location = new System.Drawing.Point(113, 97);
+            this.comboBoxObjectDetect.Name = "comboBoxObjectDetect";
+            this.comboBoxObjectDetect.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxObjectDetect.TabIndex = 15;
+            this.comboBoxObjectDetect.SelectedIndexChanged += new System.EventHandler(this.comboBoxObjectDetect_SelectedIndexChanged);
+            // 
             // Detect_face
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelLanguage);
+            this.Controls.Add(this.comboBoxObjectDetect);
             this.Controls.Add(this.btnClearPicture);
             this.Controls.Add(this.buttonFaceDetectSave);
             this.Controls.Add(this.buttonFaceDetect);
@@ -115,6 +141,7 @@
             this.Load += new System.EventHandler(this.Detect_Face_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectFace)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +153,7 @@
         private System.Windows.Forms.Button buttonFaceDetectSave;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnClearPicture;
+        private System.Windows.Forms.Label labelLanguage;
+        private System.Windows.Forms.ComboBox comboBoxObjectDetect;
     }
 }
