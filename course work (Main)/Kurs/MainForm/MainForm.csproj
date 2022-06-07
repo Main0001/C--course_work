@@ -148,10 +148,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="haarcascade_frontalface_alt_tree.xml">
+    <None Include="XmlWeights\haarcascade_eye_tree_eyeglasses.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="haarcascade_fullbody.xml">
+    <None Include="XmlWeights\haarcascade_frontalface_alt_tree.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XmlWeights\haarcascade_fullbody.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="License-LGPL.txt" />

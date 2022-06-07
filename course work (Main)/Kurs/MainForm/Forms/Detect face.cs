@@ -9,7 +9,7 @@ namespace MainForm.Forms
 {
     public partial class Detect_face : Form
     {
-        private static CascadeClassifier classifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+        private static CascadeClassifier classifier = new CascadeClassifier(@"XmlWeights\haarcascade_frontalface_alt_tree.xml");
         private string filePath = string.Empty;
         public Detect_face()
         {
@@ -60,6 +60,10 @@ namespace MainForm.Forms
                 {
                     throw new Exception("Картинка не выбрана!");
                 }
+                else if (comboBoxObjectDetect.SelectedItem == null)
+                {
+                    throw new Exception("Не выбран тип объекта!");
+                }
                 else
                 {
                     var bitmap = new Bitmap(pictureBoxDetectFace.Image);
@@ -105,15 +109,15 @@ namespace MainForm.Forms
         {
             if (comboBoxObjectDetect.SelectedIndex == 0)
             {
-                classifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+                classifier = new CascadeClassifier(@"XmlWeights\haarcascade_frontalface_alt_tree.xml");
             }
             else if (comboBoxObjectDetect.SelectedIndex == 1)
             {
-                classifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+                classifier = new CascadeClassifier(@"XmlWeights\haarcascade_fullbody.xml");
             }
             else if (comboBoxObjectDetect.SelectedIndex == 2)
             {
-                classifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+                classifier = new CascadeClassifier(@"XmlWeights\haarcascade_eye_tree_eyeglasses.xml");
             }
         }
     }

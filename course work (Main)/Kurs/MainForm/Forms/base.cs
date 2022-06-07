@@ -148,17 +148,17 @@ namespace MainForm
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void btnDetectFace_Click(object sender, EventArgs e)
         {
+            this.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+            this.Width = FormConstants.WIDTH;
+            this.Height = FormConstants.HEIGHT;
             OpenChildForm(new Forms.Detect_face(), sender);
-            base.Width = FormConstants.WIDTH;
-            base.Height = FormConstants.HEIGHT;
-            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
         private void btnDetectContours_Click(object sender, EventArgs e)
         {
+            this.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+            this.Width = FormConstants.WIDTH;
+            this.Height = FormConstants.HEIGHT;
             OpenChildForm(new Forms.Detect_contours(), sender);
-            base.Width = FormConstants.WIDTH;
-            base.Height = FormConstants.HEIGHT;
-            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
 
         private void btnDetectGeometricShapes_Click(object sender, EventArgs e)
@@ -180,12 +180,12 @@ namespace MainForm
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
             base.Width = FormConstants.WIDTH;
             base.Height = FormConstants.HEIGHT;
-            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonDetectPedestrian_Click(object sender, EventArgs e)
         {
             this.MinimumSize = new System.Drawing.Size(1325, 502);
             this.Width = 1325;

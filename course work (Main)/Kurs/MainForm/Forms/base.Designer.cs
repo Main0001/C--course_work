@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonDetectPedestrian = new System.Windows.Forms.Button();
             this.btnDetectText = new System.Windows.Forms.Button();
             this.btnDetectGeometricShapes = new System.Windows.Forms.Button();
             this.btnDetectContours = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.labelDetectTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -52,7 +52,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.buttonDetectPedestrian);
             this.panelMenu.Controls.Add(this.btnDetectText);
             this.panelMenu.Controls.Add(this.btnDetectGeometricShapes);
             this.panelMenu.Controls.Add(this.btnDetectContours);
@@ -63,6 +63,25 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(309, 439);
             this.panelMenu.TabIndex = 0;
+            // 
+            // buttonDetectPedestrian
+            // 
+            this.buttonDetectPedestrian.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDetectPedestrian.FlatAppearance.BorderSize = 0;
+            this.buttonDetectPedestrian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDetectPedestrian.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonDetectPedestrian.Image = ((System.Drawing.Image)(resources.GetObject("buttonDetectPedestrian.Image")));
+            this.buttonDetectPedestrian.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDetectPedestrian.Location = new System.Drawing.Point(0, 315);
+            this.buttonDetectPedestrian.Name = "buttonDetectPedestrian";
+            this.buttonDetectPedestrian.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonDetectPedestrian.Size = new System.Drawing.Size(309, 60);
+            this.buttonDetectPedestrian.TabIndex = 7;
+            this.buttonDetectPedestrian.Text = "   Detect pedestrians from video";
+            this.buttonDetectPedestrian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDetectPedestrian.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDetectPedestrian.UseVisualStyleBackColor = true;
+            this.buttonDetectPedestrian.Click += new System.EventHandler(this.buttonDetectPedestrian_Click);
             // 
             // btnDetectText
             // 
@@ -256,25 +275,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(692, 364);
             this.panelDesktop.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 315);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(309, 60);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "   Detect pedestrian from video";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -312,7 +312,7 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnDetectText;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDetectPedestrian;
     }
 }
 

@@ -117,10 +117,10 @@
             this.comboBoxObjectDetect.Items.AddRange(new object[] {
             "Face",
             "Full body",
-            "Glasses"});
-            this.comboBoxObjectDetect.Location = new System.Drawing.Point(113, 97);
+            "Eyes"});
+            this.comboBoxObjectDetect.Location = new System.Drawing.Point(124, 97);
             this.comboBoxObjectDetect.Name = "comboBoxObjectDetect";
-            this.comboBoxObjectDetect.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxObjectDetect.Size = new System.Drawing.Size(110, 24);
             this.comboBoxObjectDetect.TabIndex = 15;
             this.comboBoxObjectDetect.SelectedIndexChanged += new System.EventHandler(this.comboBoxObjectDetect_SelectedIndexChanged);
             // 
