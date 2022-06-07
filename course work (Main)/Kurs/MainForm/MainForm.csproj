@@ -57,11 +57,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\FormConstants.cs" />
     <Compile Include="Forms\base.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\base.Designer.cs">
       <DependentUpon>base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Detect car numbers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Detect car numbers.Designer.cs">
+      <DependentUpon>Detect car numbers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Detect contours.cs">
       <SubType>Form</SubType>
@@ -98,6 +105,9 @@
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Forms\base.resx">
       <DependentUpon>base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Detect car numbers.resx">
+      <DependentUpon>Detect car numbers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detect contours.resx">
       <DependentUpon>Detect contours.cs</DependentUpon>
@@ -145,6 +155,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="License-LGPL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Car Numbers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets')" />

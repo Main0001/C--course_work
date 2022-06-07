@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnDetectText = new System.Windows.Forms.Button();
             this.btnDetectGeometricShapes = new System.Windows.Forms.Button();
             this.btnDetectContours = new System.Windows.Forms.Button();
             this.btnDetectFullBody = new System.Windows.Forms.Button();
             this.btnDetectFace = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelProgramName = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.labelDetectTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnDetectText = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -61,8 +61,27 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(309, 538);
+            this.panelMenu.Size = new System.Drawing.Size(309, 421);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnDetectText
+            // 
+            this.btnDetectText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDetectText.FlatAppearance.BorderSize = 0;
+            this.btnDetectText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetectText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDetectText.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectText.Image")));
+            this.btnDetectText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetectText.Location = new System.Drawing.Point(0, 315);
+            this.btnDetectText.Name = "btnDetectText";
+            this.btnDetectText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDetectText.Size = new System.Drawing.Size(309, 60);
+            this.btnDetectText.TabIndex = 6;
+            this.btnDetectText.Text = "   Detect  text from image";
+            this.btnDetectText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetectText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDetectText.UseVisualStyleBackColor = true;
+            this.btnDetectText.Click += new System.EventHandler(this.btnDetectText_Click);
             // 
             // btnDetectGeometricShapes
             // 
@@ -143,23 +162,23 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.labelProgramName);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(309, 75);
             this.panelLogo.TabIndex = 1;
             // 
-            // label1
+            // labelProgramName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 20F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(75, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "OС V 1.0";
+            this.labelProgramName.AutoSize = true;
+            this.labelProgramName.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 20F);
+            this.labelProgramName.ForeColor = System.Drawing.Color.White;
+            this.labelProgramName.Location = new System.Drawing.Point(75, 10);
+            this.labelProgramName.Name = "labelProgramName";
+            this.labelProgramName.Size = new System.Drawing.Size(148, 46);
+            this.labelProgramName.TabIndex = 2;
+            this.labelProgramName.Text = "OС V 1.0";
             // 
             // panelTitleBar
             // 
@@ -172,7 +191,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(309, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(847, 75);
+            this.panelTitleBar.Size = new System.Drawing.Size(692, 75);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -183,7 +202,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(750, -9);
+            this.btnMinimize.Location = new System.Drawing.Point(595, -9);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(29, 42);
             this.btnMinimize.TabIndex = 4;
@@ -198,7 +217,7 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(778, -9);
+            this.btnMaximize.Location = new System.Drawing.Point(623, -9);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(38, 42);
             this.btnMaximize.TabIndex = 3;
@@ -213,7 +232,7 @@
             this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCloseForm.ForeColor = System.Drawing.Color.White;
-            this.btnCloseForm.Location = new System.Drawing.Point(815, -9);
+            this.btnCloseForm.Location = new System.Drawing.Point(660, -9);
             this.btnCloseForm.Name = "btnCloseForm";
             this.btnCloseForm.Size = new System.Drawing.Size(29, 42);
             this.btnCloseForm.TabIndex = 2;
@@ -240,7 +259,7 @@
             this.labelDetectTitle.AutoSize = true;
             this.labelDetectTitle.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDetectTitle.ForeColor = System.Drawing.Color.White;
-            this.labelDetectTitle.Location = new System.Drawing.Point(181, 10);
+            this.labelDetectTitle.Location = new System.Drawing.Point(104, 10);
             this.labelDetectTitle.Name = "labelDetectTitle";
             this.labelDetectTitle.Size = new System.Drawing.Size(198, 46);
             this.labelDetectTitle.TabIndex = 0;
@@ -253,39 +272,21 @@
             this.panelDesktop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelDesktop.Location = new System.Drawing.Point(309, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(847, 463);
+            this.panelDesktop.Size = new System.Drawing.Size(692, 346);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // btnDetectText
-            // 
-            this.btnDetectText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDetectText.FlatAppearance.BorderSize = 0;
-            this.btnDetectText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetectText.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDetectText.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectText.Image")));
-            this.btnDetectText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectText.Location = new System.Drawing.Point(0, 315);
-            this.btnDetectText.Name = "btnDetectText";
-            this.btnDetectText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDetectText.Size = new System.Drawing.Size(309, 60);
-            this.btnDetectText.TabIndex = 6;
-            this.btnDetectText.Text = "   Detect  text from image";
-            this.btnDetectText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDetectText.UseVisualStyleBackColor = true;
-            this.btnDetectText.Click += new System.EventHandler(this.btnDetectText_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 538);
+            this.ClientSize = new System.Drawing.Size(1001, 421);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.MinimumSize = new System.Drawing.Size(1174, 585);
+            this.MinimumSize = new System.Drawing.Size(1019, 468);
             this.Name = "MainForm";
             this.Text = "Open CV V 1.0";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
@@ -305,7 +306,7 @@
         private System.Windows.Forms.Button btnDetectFace;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label labelDetectTitle;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelProgramName;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Button btnCloseChildForm;
         private System.Windows.Forms.Button btnCloseForm;

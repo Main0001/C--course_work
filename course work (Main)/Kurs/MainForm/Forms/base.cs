@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainForm.Constants;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -154,39 +155,47 @@ namespace MainForm
         private void btnDetectFace_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Detect_face(), sender);
-            base.Width = 847;
-            base.Height = 463;
-            base.MinimumSize = new System.Drawing.Size(847, 463);
+            base.Width = FormConstants.WIDTH;
+            base.Height = FormConstants.HEIGHT;
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
         private void btnDetectFullBody_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Detect_full_body(), sender);
-            base.Width = 847;
-            base.Height = 463;
-            base.MinimumSize = new System.Drawing.Size(847, 463);
+            base.Width = FormConstants.WIDTH;
+            base.Height = FormConstants.HEIGHT;
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
         private void btnDetectContours_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Detect_contours(), sender);
-            base.Width = 847;
-            base.Height = 463;
-            base.MinimumSize = new System.Drawing.Size(847, 463);
+            base.Width = FormConstants.WIDTH;
+            base.Height = FormConstants.HEIGHT;
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
 
         private void btnDetectGeometricShapes_Click(object sender, EventArgs e)
         {
+
+            this.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+            this.Width = FormConstants.WIDTH;
+            this.Height = FormConstants.HEIGHT;
             OpenChildForm(new Forms.Detect_geometric_shapes(), sender);
-            base.Width = 847;
-            base.Height = 463;
-            base.MinimumSize = new System.Drawing.Size(847, 463);
         }
 
         private void btnDetectText_Click(object sender, EventArgs e)
         {
+            this.MinimumSize = new System.Drawing.Size(1325, 502);
+            this.Width = 1325;
+            this.Height = 502;
             OpenChildForm(new Forms.Detect_text(), sender);
-            base.Width = 1325;
-            base.Height = 502;
-            base.MinimumSize = new System.Drawing.Size(1325, 502);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            base.Width = FormConstants.WIDTH;
+            base.Height = FormConstants.HEIGHT;
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
         }
     }
 }

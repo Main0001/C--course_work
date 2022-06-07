@@ -24,6 +24,7 @@ namespace MainForm.Forms
         private void Detect_Face_Load(object sender, EventArgs e)
         {
             LoadTheme();
+
         }
         private void LoadTheme()
         {
