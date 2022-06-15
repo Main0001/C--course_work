@@ -34,7 +34,7 @@
             this.btnDetectText = new System.Windows.Forms.Button();
             this.btnDetectGeometricShapes = new System.Windows.Forms.Button();
             this.btnDetectContours = new System.Windows.Forms.Button();
-            this.btnDetectFace = new System.Windows.Forms.Button();
+            this.btnDetectObjects = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.labelProgramName = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.panelMenu.Controls.Add(this.btnDetectText);
             this.panelMenu.Controls.Add(this.btnDetectGeometricShapes);
             this.panelMenu.Controls.Add(this.btnDetectContours);
-            this.panelMenu.Controls.Add(this.btnDetectFace);
+            this.panelMenu.Controls.Add(this.btnDetectObjects);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -140,24 +140,24 @@
             this.btnDetectContours.UseVisualStyleBackColor = true;
             this.btnDetectContours.Click += new System.EventHandler(this.btnDetectContours_Click);
             // 
-            // btnDetectFace
+            // btnDetectObjects
             // 
-            this.btnDetectFace.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDetectFace.FlatAppearance.BorderSize = 0;
-            this.btnDetectFace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetectFace.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDetectFace.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectFace.Image")));
-            this.btnDetectFace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectFace.Location = new System.Drawing.Point(0, 75);
-            this.btnDetectFace.Name = "btnDetectFace";
-            this.btnDetectFace.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDetectFace.Size = new System.Drawing.Size(309, 60);
-            this.btnDetectFace.TabIndex = 2;
-            this.btnDetectFace.Text = "  Detect face from image";
-            this.btnDetectFace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetectFace.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDetectFace.UseVisualStyleBackColor = true;
-            this.btnDetectFace.Click += new System.EventHandler(this.btnDetectFace_Click);
+            this.btnDetectObjects.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDetectObjects.FlatAppearance.BorderSize = 0;
+            this.btnDetectObjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetectObjects.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDetectObjects.Image = ((System.Drawing.Image)(resources.GetObject("btnDetectObjects.Image")));
+            this.btnDetectObjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetectObjects.Location = new System.Drawing.Point(0, 75);
+            this.btnDetectObjects.Name = "btnDetectObjects";
+            this.btnDetectObjects.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDetectObjects.Size = new System.Drawing.Size(309, 60);
+            this.btnDetectObjects.TabIndex = 2;
+            this.btnDetectObjects.Text = "  Detect objects from image";
+            this.btnDetectObjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetectObjects.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDetectObjects.UseVisualStyleBackColor = true;
+            this.btnDetectObjects.Click += new System.EventHandler(this.btnDetectObjects_Click);
             // 
             // panelLogo
             // 
@@ -302,7 +302,7 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnDetectGeometricShapes;
         private System.Windows.Forms.Button btnDetectContours;
-        private System.Windows.Forms.Button btnDetectFace;
+        private System.Windows.Forms.Button btnDetectObjects;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label labelDetectTitle;
         private System.Windows.Forms.Label labelProgramName;

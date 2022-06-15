@@ -1,6 +1,6 @@
 ﻿namespace MainForm.Forms
 {
-    partial class Detect_face
+    partial class Detect_objects
     {
         /// <summary>
         /// Required designer variable.
@@ -124,7 +124,7 @@
             this.comboBoxObjectDetect.TabIndex = 15;
             this.comboBoxObjectDetect.SelectedIndexChanged += new System.EventHandler(this.comboBoxObjectDetect_SelectedIndexChanged);
             // 
-            // Detect_face
+            // Detect_objects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +136,7 @@
             this.Controls.Add(this.buttonFaceDetect);
             this.Controls.Add(this.buttonFileOpen);
             this.Controls.Add(this.pictureBoxDetectFace);
-            this.Name = "Detect_face";
+            this.Name = "Detect_objects";
             this.Text = "Detect face";
             this.Load += new System.EventHandler(this.Detect_Face_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectFace)).EndInit();

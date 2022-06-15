@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace MainForm.Forms
 {
-    public partial class Detect_face : Form
+    public partial class Detect_objects : Form
     {
         private static CascadeClassifier classifier = new CascadeClassifier(@"XmlWeights\haarcascade_frontalface_alt_tree.xml");
         private string filePath = string.Empty;
-        public Detect_face()
+        public Detect_objects()
         {
             InitializeComponent();
         }

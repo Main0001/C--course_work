@@ -30,6 +30,13 @@ namespace MainForm
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         //Методы
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+            base.Width = FormConstants.WIDTH;
+            base.Height = FormConstants.HEIGHT;
+        }
+
         private Color SelectThemeColor() // тема при нажатии кнопок
         {
             int index = random.Next(ThemeColor.colorList.Count); // получаем случайный цвет из массива цветов
@@ -146,12 +153,12 @@ namespace MainForm
             btnCloseChildForm.Visible = false;
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        private void btnDetectFace_Click(object sender, EventArgs e)
+        private void btnDetectObjects_Click(object sender, EventArgs e)
         {
             this.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
             this.Width = FormConstants.WIDTH;
             this.Height = FormConstants.HEIGHT;
-            OpenChildForm(new Forms.Detect_face(), sender);
+            OpenChildForm(new Forms.Detect_objects(), sender);
         }
         private void btnDetectContours_Click(object sender, EventArgs e)
         {
@@ -176,13 +183,6 @@ namespace MainForm
             this.Width = 1325;
             this.Height = 502;
             OpenChildForm(new Forms.Detect_text(), sender);
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
-            base.Width = FormConstants.WIDTH;
-            base.Height = FormConstants.HEIGHT;
         }
 
         private void buttonDetectPedestrian_Click(object sender, EventArgs e)

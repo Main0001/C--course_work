@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnWatchVideo = new System.Windows.Forms.Button();
             this.btnPauseVideo = new System.Windows.Forms.Button();
             this.buttonPedestrianDetect = new System.Windows.Forms.Button();
             this.buttonFileOpen = new System.Windows.Forms.Button();
@@ -44,23 +43,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrames)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnWatchVideo
-            // 
-            this.btnWatchVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWatchVideo.Location = new System.Drawing.Point(40, 317);
-            this.btnWatchVideo.Name = "btnWatchVideo";
-            this.btnWatchVideo.Size = new System.Drawing.Size(200, 54);
-            this.btnWatchVideo.TabIndex = 21;
-            this.btnWatchVideo.Text = "Watch";
-            this.btnWatchVideo.UseVisualStyleBackColor = true;
-            this.btnWatchVideo.Click += new System.EventHandler(this.btnbtnWatchVideo_Click);
-            // 
             // btnPauseVideo
             // 
             this.btnPauseVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPauseVideo.Location = new System.Drawing.Point(40, 240);
+            this.btnPauseVideo.Location = new System.Drawing.Point(26, 164);
             this.btnPauseVideo.Name = "btnPauseVideo";
-            this.btnPauseVideo.Size = new System.Drawing.Size(200, 54);
+            this.btnPauseVideo.Size = new System.Drawing.Size(214, 55);
             this.btnPauseVideo.TabIndex = 19;
             this.btnPauseVideo.Text = "Pause";
             this.btnPauseVideo.UseVisualStyleBackColor = true;
@@ -69,20 +57,20 @@
             // buttonPedestrianDetect
             // 
             this.buttonPedestrianDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPedestrianDetect.Location = new System.Drawing.Point(40, 107);
+            this.buttonPedestrianDetect.Location = new System.Drawing.Point(26, 103);
             this.buttonPedestrianDetect.Name = "buttonPedestrianDetect";
-            this.buttonPedestrianDetect.Size = new System.Drawing.Size(200, 38);
+            this.buttonPedestrianDetect.Size = new System.Drawing.Size(214, 55);
             this.buttonPedestrianDetect.TabIndex = 17;
-            this.buttonPedestrianDetect.Text = "Recognize";
+            this.buttonPedestrianDetect.Text = "Recognize / Watch";
             this.buttonPedestrianDetect.UseVisualStyleBackColor = true;
             this.buttonPedestrianDetect.Click += new System.EventHandler(this.buttonPedestrianDetect_Click);
             // 
             // buttonFileOpen
             // 
             this.buttonFileOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFileOpen.Location = new System.Drawing.Point(40, 42);
+            this.buttonFileOpen.Location = new System.Drawing.Point(26, 42);
             this.buttonFileOpen.Name = "buttonFileOpen";
-            this.buttonFileOpen.Size = new System.Drawing.Size(200, 38);
+            this.buttonFileOpen.Size = new System.Drawing.Size(214, 55);
             this.buttonFileOpen.TabIndex = 16;
             this.buttonFileOpen.Text = "Browse";
             this.buttonFileOpen.UseVisualStyleBackColor = true;
@@ -116,7 +104,7 @@
             // 
             // buttonRewindForward
             // 
-            this.buttonRewindForward.Location = new System.Drawing.Point(133, 390);
+            this.buttonRewindForward.Location = new System.Drawing.Point(133, 225);
             this.buttonRewindForward.Name = "buttonRewindForward";
             this.buttonRewindForward.Size = new System.Drawing.Size(32, 23);
             this.buttonRewindForward.TabIndex = 25;
@@ -126,7 +114,7 @@
             // 
             // buttonRewindBack
             // 
-            this.buttonRewindBack.Location = new System.Drawing.Point(96, 390);
+            this.buttonRewindBack.Location = new System.Drawing.Point(96, 225);
             this.buttonRewindBack.Name = "buttonRewindBack";
             this.buttonRewindBack.Size = new System.Drawing.Size(31, 23);
             this.buttonRewindBack.TabIndex = 26;
@@ -137,18 +125,19 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "MP4|*.mp4|AVI|*.avi|MKV|*.mkv";
             // 
             // labelFrames
             // 
             this.labelFrames.AutoSize = true;
-            this.labelFrames.Location = new System.Drawing.Point(37, 393);
+            this.labelFrames.Location = new System.Drawing.Point(23, 228);
             this.labelFrames.Name = "labelFrames";
             this.labelFrames.Size = new System.Drawing.Size(0, 16);
             this.labelFrames.TabIndex = 27;
             // 
             // numericUpDownFrames
             // 
-            this.numericUpDownFrames.Location = new System.Drawing.Point(171, 390);
+            this.numericUpDownFrames.Location = new System.Drawing.Point(171, 225);
             this.numericUpDownFrames.Minimum = new decimal(new int[] {
             1,
             0,
@@ -173,13 +162,13 @@
             this.Controls.Add(this.buttonRewindBack);
             this.Controls.Add(this.buttonRewindForward);
             this.Controls.Add(this.pictureBoxDetectPedestrianResult);
-            this.Controls.Add(this.btnWatchVideo);
             this.Controls.Add(this.btnPauseVideo);
             this.Controls.Add(this.buttonPedestrianDetect);
             this.Controls.Add(this.buttonFileOpen);
             this.Controls.Add(this.pictureBoxDetectPedestrian);
             this.Name = "Detect_pedestrian";
             this.Text = "Detect pedestrian";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Detect_pedestrian_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectPedestrian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectPedestrianResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrames)).EndInit();
@@ -189,8 +178,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnWatchVideo;
         private System.Windows.Forms.Button btnPauseVideo;
         private System.Windows.Forms.Button buttonPedestrianDetect;
         private System.Windows.Forms.Button buttonFileOpen;

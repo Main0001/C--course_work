@@ -70,17 +70,11 @@
     <Compile Include="Forms\Detect contours.Designer.cs">
       <DependentUpon>Detect contours.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Detect face.cs">
+    <Compile Include="Forms\Detect objects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Detect face.Designer.cs">
-      <DependentUpon>Detect face.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Detect full body.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Detect full body.Designer.cs">
-      <DependentUpon>Detect full body.cs</DependentUpon>
+    <Compile Include="Forms\Detect objects.Designer.cs">
+      <DependentUpon>Detect objects.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Detect geometric shapes.cs">
       <SubType>Form</SubType>
@@ -109,11 +103,8 @@
     <EmbeddedResource Include="Forms\Detect contours.resx">
       <DependentUpon>Detect contours.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Detect face.resx">
-      <DependentUpon>Detect face.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Detect full body.resx">
-      <DependentUpon>Detect full body.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Detect objects.resx">
+      <DependentUpon>Detect objects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detect geometric shapes.resx">
       <DependentUpon>Detect geometric shapes.cs</DependentUpon>
