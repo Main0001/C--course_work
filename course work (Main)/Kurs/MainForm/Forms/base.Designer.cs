@@ -44,6 +44,7 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.labelDetectTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.buttonAboutProgram = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -52,6 +53,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.buttonAboutProgram);
             this.panelMenu.Controls.Add(this.buttonDetectPedestrian);
             this.panelMenu.Controls.Add(this.btnDetectText);
             this.panelMenu.Controls.Add(this.btnDetectGeometricShapes);
@@ -77,7 +79,7 @@
             this.buttonDetectPedestrian.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonDetectPedestrian.Size = new System.Drawing.Size(309, 60);
             this.buttonDetectPedestrian.TabIndex = 7;
-            this.buttonDetectPedestrian.Text = "   Detect pedestrians from video";
+            this.buttonDetectPedestrian.Text = "Обнаружение пешеходов на видео";
             this.buttonDetectPedestrian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDetectPedestrian.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDetectPedestrian.UseVisualStyleBackColor = true;
@@ -96,7 +98,7 @@
             this.btnDetectText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectText.Size = new System.Drawing.Size(309, 60);
             this.btnDetectText.TabIndex = 6;
-            this.btnDetectText.Text = "   Detect  text from image";
+            this.btnDetectText.Text = "Обнаружение текста на  изображении";
             this.btnDetectText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetectText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetectText.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             this.btnDetectGeometricShapes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectGeometricShapes.Size = new System.Drawing.Size(309, 60);
             this.btnDetectGeometricShapes.TabIndex = 5;
-            this.btnDetectGeometricShapes.Text = "   Detect  geometric shapes from image";
+            this.btnDetectGeometricShapes.Text = "Обнаружение фигур на изображении";
             this.btnDetectGeometricShapes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetectGeometricShapes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetectGeometricShapes.UseVisualStyleBackColor = true;
@@ -134,7 +136,7 @@
             this.btnDetectContours.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectContours.Size = new System.Drawing.Size(309, 60);
             this.btnDetectContours.TabIndex = 4;
-            this.btnDetectContours.Text = "   Detect  contours from image";
+            this.btnDetectContours.Text = "Обнаружение контуров на изображении";
             this.btnDetectContours.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetectContours.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetectContours.UseVisualStyleBackColor = true;
@@ -153,7 +155,7 @@
             this.btnDetectObjects.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectObjects.Size = new System.Drawing.Size(309, 60);
             this.btnDetectObjects.TabIndex = 2;
-            this.btnDetectObjects.Text = "  Detect objects from image";
+            this.btnDetectObjects.Text = "Обнаружение объектов на изображении";
             this.btnDetectObjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetectObjects.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetectObjects.UseVisualStyleBackColor = true;
@@ -261,9 +263,9 @@
             this.labelDetectTitle.ForeColor = System.Drawing.Color.White;
             this.labelDetectTitle.Location = new System.Drawing.Point(104, 10);
             this.labelDetectTitle.Name = "labelDetectTitle";
-            this.labelDetectTitle.Size = new System.Drawing.Size(198, 46);
+            this.labelDetectTitle.Size = new System.Drawing.Size(306, 46);
             this.labelDetectTitle.TabIndex = 0;
-            this.labelDetectTitle.Text = "Home page";
+            this.labelDetectTitle.Text = "Главная страница";
             this.labelDetectTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktop
@@ -274,6 +276,25 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(692, 364);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // buttonAboutProgram
+            // 
+            this.buttonAboutProgram.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAboutProgram.FlatAppearance.BorderSize = 0;
+            this.buttonAboutProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAboutProgram.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonAboutProgram.Image = ((System.Drawing.Image)(resources.GetObject("buttonAboutProgram.Image")));
+            this.buttonAboutProgram.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAboutProgram.Location = new System.Drawing.Point(0, 375);
+            this.buttonAboutProgram.Name = "buttonAboutProgram";
+            this.buttonAboutProgram.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonAboutProgram.Size = new System.Drawing.Size(309, 60);
+            this.buttonAboutProgram.TabIndex = 8;
+            this.buttonAboutProgram.Text = "О программе";
+            this.buttonAboutProgram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAboutProgram.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAboutProgram.UseVisualStyleBackColor = true;
+            this.buttonAboutProgram.Click += new System.EventHandler(this.buttonAboutProgram_Click);
             // 
             // MainForm
             // 
@@ -313,6 +334,7 @@
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnDetectText;
         private System.Windows.Forms.Button buttonDetectPedestrian;
+        private System.Windows.Forms.Button buttonAboutProgram;
     }
 }
 

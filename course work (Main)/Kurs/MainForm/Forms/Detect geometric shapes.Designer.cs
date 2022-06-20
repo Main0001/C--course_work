@@ -44,7 +44,7 @@
             this.btnClearPicture.Name = "btnClearPicture";
             this.btnClearPicture.Size = new System.Drawing.Size(200, 54);
             this.btnClearPicture.TabIndex = 10;
-            this.btnClearPicture.Text = "Clear working area";
+            this.btnClearPicture.Text = "Очистить рабочую область";
             this.btnClearPicture.UseVisualStyleBackColor = true;
             this.btnClearPicture.Click += new System.EventHandler(this.btnClearPicture_Click);
             // 
@@ -55,7 +55,7 @@
             this.buttonGeometricShapesDetectSave.Name = "buttonGeometricShapesDetectSave";
             this.buttonGeometricShapesDetectSave.Size = new System.Drawing.Size(200, 38);
             this.buttonGeometricShapesDetectSave.TabIndex = 9;
-            this.buttonGeometricShapesDetectSave.Text = "Save result";
+            this.buttonGeometricShapesDetectSave.Text = "Сохранить результат";
             this.buttonGeometricShapesDetectSave.UseVisualStyleBackColor = true;
             this.buttonGeometricShapesDetectSave.Click += new System.EventHandler(this.buttonGeometricShapesDetectSave_Click);
             // 
@@ -66,7 +66,7 @@
             this.buttonGeometricShapesDetect.Name = "buttonGeometricShapesDetect";
             this.buttonGeometricShapesDetect.Size = new System.Drawing.Size(200, 38);
             this.buttonGeometricShapesDetect.TabIndex = 8;
-            this.buttonGeometricShapesDetect.Text = "Recognize";
+            this.buttonGeometricShapesDetect.Text = "Распознать";
             this.buttonGeometricShapesDetect.UseVisualStyleBackColor = true;
             this.buttonGeometricShapesDetect.Click += new System.EventHandler(this.buttonGeometricShapesDetect_Click);
             // 
@@ -77,7 +77,7 @@
             this.buttonFileOpen.Name = "buttonFileOpen";
             this.buttonFileOpen.Size = new System.Drawing.Size(200, 38);
             this.buttonFileOpen.TabIndex = 7;
-            this.buttonFileOpen.Text = "Browse";
+            this.buttonFileOpen.Text = "Обзор";
             this.buttonFileOpen.UseVisualStyleBackColor = true;
             this.buttonFileOpen.Click += new System.EventHandler(this.buttonFileOpen_Click);
             // 
@@ -111,7 +111,7 @@
             this.Controls.Add(this.buttonFileOpen);
             this.Controls.Add(this.pictureBoxDetectGeometricShapes);
             this.Name = "Detect_geometric_shapes";
-            this.Text = "Detect geometric shapes";
+            this.Text = "Обнаружение фигур";
             this.Load += new System.EventHandler(this.Detect_geometric_shapes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectGeometricShapes)).EndInit();
             this.ResumeLayout(false);

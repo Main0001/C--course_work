@@ -41,44 +41,44 @@
             // btnClearPicture
             // 
             this.btnClearPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearPicture.Location = new System.Drawing.Point(36, 292);
+            this.btnClearPicture.Location = new System.Drawing.Point(26, 292);
             this.btnClearPicture.Name = "btnClearPicture";
             this.btnClearPicture.Size = new System.Drawing.Size(200, 54);
             this.btnClearPicture.TabIndex = 15;
-            this.btnClearPicture.Text = "Clear working area";
+            this.btnClearPicture.Text = "Очистить рабочую область";
             this.btnClearPicture.UseVisualStyleBackColor = true;
             this.btnClearPicture.Click += new System.EventHandler(this.btnClearPicture_Click);
             // 
             // buttonContoursSave
             // 
             this.buttonContoursSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContoursSave.Location = new System.Drawing.Point(36, 229);
+            this.buttonContoursSave.Location = new System.Drawing.Point(26, 229);
             this.buttonContoursSave.Name = "buttonContoursSave";
             this.buttonContoursSave.Size = new System.Drawing.Size(200, 38);
             this.buttonContoursSave.TabIndex = 14;
-            this.buttonContoursSave.Text = "Save result";
+            this.buttonContoursSave.Text = "Сохранить результат";
             this.buttonContoursSave.UseVisualStyleBackColor = true;
             this.buttonContoursSave.Click += new System.EventHandler(this.buttonContoursSave_Click);
             // 
             // buttonContoursDetect
             // 
             this.buttonContoursDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContoursDetect.Location = new System.Drawing.Point(36, 116);
+            this.buttonContoursDetect.Location = new System.Drawing.Point(26, 116);
             this.buttonContoursDetect.Name = "buttonContoursDetect";
             this.buttonContoursDetect.Size = new System.Drawing.Size(200, 38);
             this.buttonContoursDetect.TabIndex = 13;
-            this.buttonContoursDetect.Text = "Recognize";
+            this.buttonContoursDetect.Text = "Распознать";
             this.buttonContoursDetect.UseVisualStyleBackColor = true;
             this.buttonContoursDetect.Click += new System.EventHandler(this.buttonContoursDetect_Click);
             // 
             // buttonFileOpen
             // 
             this.buttonFileOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFileOpen.Location = new System.Drawing.Point(36, 51);
+            this.buttonFileOpen.Location = new System.Drawing.Point(26, 51);
             this.buttonFileOpen.Name = "buttonFileOpen";
             this.buttonFileOpen.Size = new System.Drawing.Size(200, 38);
             this.buttonFileOpen.TabIndex = 12;
-            this.buttonFileOpen.Text = "Browse";
+            this.buttonFileOpen.Text = "Обзор";
             this.buttonFileOpen.UseVisualStyleBackColor = true;
             this.buttonFileOpen.Click += new System.EventHandler(this.buttonFileOpen_Click);
             // 
@@ -100,11 +100,11 @@
             // 
             this.checkBoxContoursBlackBackground.AutoSize = true;
             this.checkBoxContoursBlackBackground.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxContoursBlackBackground.Location = new System.Drawing.Point(36, 160);
+            this.checkBoxContoursBlackBackground.Location = new System.Drawing.Point(26, 160);
             this.checkBoxContoursBlackBackground.Name = "checkBoxContoursBlackBackground";
-            this.checkBoxContoursBlackBackground.Size = new System.Drawing.Size(278, 21);
+            this.checkBoxContoursBlackBackground.Size = new System.Drawing.Size(263, 21);
             this.checkBoxContoursBlackBackground.TabIndex = 16;
-            this.checkBoxContoursBlackBackground.Text = "Show contours in the black background";
+            this.checkBoxContoursBlackBackground.Text = "Показать контуры на черном фоне";
             this.checkBoxContoursBlackBackground.UseVisualStyleBackColor = true;
             // 
             // openFileDialog1
@@ -124,7 +124,7 @@
             this.Controls.Add(this.buttonFileOpen);
             this.Controls.Add(this.pictureBoxDetectContours);
             this.Name = "Detect_contours";
-            this.Text = "Detect contours";
+            this.Text = "Обнаружение контуров";
             this.Load += new System.EventHandler(this.Detect_contours_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectContours)).EndInit();
             this.ResumeLayout(false);

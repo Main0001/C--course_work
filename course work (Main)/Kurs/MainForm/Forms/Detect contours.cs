@@ -1,8 +1,8 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
+using MainForm.Constants;
 using System;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
@@ -12,16 +12,17 @@ namespace MainForm.Forms
     {
         private Image<Bgr, byte> inputImage = null;
         private string filePath = string.Empty;
-        private int count = 0;
+        private int count = FormConstants.COUNT;
         public Detect_contours()
         {
             InitializeComponent();
+            checkBoxContoursBlackBackground.Enabled = false;
         }
 
         private void Detect_contours_Load(object sender, EventArgs e)
         {
             LoadTheme();
-            checkBoxContoursBlackBackground.Text = "Show contours in the black" + "\r\n" + "background";
+            checkBoxContoursBlackBackground.Text = "Показать контуры на черном\n фоне";
         }
 
         private void LoadTheme()
@@ -32,7 +33,7 @@ namespace MainForm.Forms
                 {
                     Button btn = (Button)btns;
                     btn.BackColor = ThemeColor.PrimaryColor; //Присвоит дефолтный бэкграунд кнопке
-                    btn.ForeColor = Color.White;
+                    btn.ForeColor = FormConstants.BUTTON_ACTIVATE_FORE_COLOR;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
@@ -49,7 +50,7 @@ namespace MainForm.Forms
                     inputImage = new Image<Bgr, byte>(openFileDialog1.FileName);
 
                     pictureBoxDetectContours.Image = inputImage.Bitmap; // .Bitmap - преобразует изображение в растровое
-                    count = 0;
+                    count = FormConstants.COUNT;
                 }
             }
             catch (Exception ex)
@@ -62,7 +63,8 @@ namespace MainForm.Forms
         {
             try
             {
-                if (string.IsNullOrEmpty(filePath) || String.IsNullOrWhiteSpace(filePath))
+                checkBoxContoursBlackBackground.Enabled = true;
+                if (string.IsNullOrEmpty(filePath) || string.IsNullOrWhiteSpace(filePath))
                 {
                     throw new Exception("Картинка не выбрана!");
                 }
@@ -107,19 +109,27 @@ namespace MainForm.Forms
 
         private void buttonContoursSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "PNG|*.png|JPG|*.jpg";
-            ImageFormat format = ImageFormat.Jpeg;
-            if (sfd.ShowDialog() == DialogResult.OK)
+            try
             {
-                pictureBoxDetectContours.Image.Save(sfd.FileName, format);
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = FormConstants.FILTER;
+                ImageFormat format = FormConstants.FORMAT;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxDetectContours.Image.Save(sfd.FileName, format);
+                    MessageBox.Show("Данный результат успешно сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Данный результат не удалось сохранить", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnClearPicture_Click(object sender, EventArgs e)
         {
             pictureBoxDetectContours.Image = null;
-            count = 0;
+            count = FormConstants.COUNT;
             filePath = string.Empty;
         }
     }

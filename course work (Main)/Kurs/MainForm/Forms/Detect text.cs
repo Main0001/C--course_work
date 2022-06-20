@@ -1,4 +1,5 @@
-﻿using Emgu.CV;
+﻿using MainForm.Constants;
+using Emgu.CV;
 using Emgu.CV.OCR;
 using Emgu.CV.Structure;
 using System;
@@ -28,7 +29,7 @@ namespace MainForm.Forms
                 {
                     Button btn = (Button)btns;
                     btn.BackColor = ThemeColor.PrimaryColor; //Присвоит бэкграунд кнопке (определенного цвета)
-                    btn.ForeColor = Color.White;
+                    btn.ForeColor = FormConstants.BUTTON_ACTIVATE_FORE_COLOR;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
@@ -98,7 +99,15 @@ namespace MainForm.Forms
         private void buttonTextDetectSave_Click(object sender, EventArgs e)
         {
             var detectTextSave = richTextBoxDetectText.Text;
-            Clipboard.SetText(detectTextSave);
+            try
+            {
+                Clipboard.SetText(detectTextSave);
+                MessageBox.Show("Результат успешно сохранен в буфер обмена", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Отсутствует результат", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClearPicture_Click(object sender, EventArgs e)

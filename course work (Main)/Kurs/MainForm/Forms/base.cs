@@ -30,12 +30,6 @@ namespace MainForm
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         //Методы
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
-            base.Width = FormConstants.WIDTH;
-            base.Height = FormConstants.HEIGHT;
-        }
 
         private Color SelectThemeColor() // тема при нажатии кнопок
         {
@@ -59,7 +53,7 @@ namespace MainForm
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    currentButton.Font = FormConstants.BUTTON_ACTIVATE_FONT;
                     panelTitleBar.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
@@ -74,9 +68,9 @@ namespace MainForm
             {
                 if(previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51,51,76); //Присвоит дефолтный бэкграунд кнопке
-                    previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    previousBtn.BackColor = FormConstants.BUTTON_DEFAULT_BACKGROUND_COLOR; //Присвоит дефолтный бэкграунд кнопке
+                    previousBtn.ForeColor = FormConstants.BUTTON_DEFAULT_FORE_COLOR;
+                    previousBtn.Font = FormConstants.BUTTON_DEFAULT_FONT;
                 }
             }
         }
@@ -146,13 +140,19 @@ namespace MainForm
         private void Reset()
         {
             DisableButton();
-            labelDetectTitle.Text = "Home page";
-            panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            labelDetectTitle.Text = "Главная страница";
+            panelTitleBar.BackColor = FormConstants.PANEL_TITLE_BAR_BACKGROUND_COLOR;
+            panelLogo.BackColor = FormConstants.PANEL_LOGO_BACKGROUND_COLOR;
             currentButton = null;
             btnCloseChildForm.Visible = false;
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            base.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+            base.Width = FormConstants.WIDTH;
+            base.Height = FormConstants.HEIGHT;
+        }
         private void btnDetectObjects_Click(object sender, EventArgs e)
         {
             this.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
@@ -179,18 +179,26 @@ namespace MainForm
 
         private void btnDetectText_Click(object sender, EventArgs e)
         {
-            this.MinimumSize = new System.Drawing.Size(1325, 502);
-            this.Width = 1325;
-            this.Height = 502;
+            this.MinimumSize = new System.Drawing.Size(FormConstants.INCREASED_WIDTH, FormConstants.INCREASED_HEIGHT);
+            this.Width = FormConstants.INCREASED_WIDTH;
+            this.Height = FormConstants.INCREASED_HEIGHT;
             OpenChildForm(new Forms.Detect_text(), sender);
         }
 
         private void buttonDetectPedestrian_Click(object sender, EventArgs e)
         {
-            this.MinimumSize = new System.Drawing.Size(1325, 502);
-            this.Width = 1325;
-            this.Height = 502;
+            this.MinimumSize = new System.Drawing.Size(FormConstants.INCREASED_WIDTH, FormConstants.INCREASED_HEIGHT);
+            this.Width = FormConstants.INCREASED_WIDTH;
+            this.Height = FormConstants.INCREASED_HEIGHT;
             OpenChildForm(new Forms.Detect_pedestrian(), sender);
+        }
+
+        private void buttonAboutProgram_Click(object sender, EventArgs e)
+        {
+            this.MinimumSize = new System.Drawing.Size(FormConstants.WIDTH, FormConstants.HEIGHT);
+            this.Width = FormConstants.WIDTH;
+            this.Height = FormConstants.HEIGHT;
+            OpenChildForm(new Forms.About_program(), sender);
         }
     }
 }

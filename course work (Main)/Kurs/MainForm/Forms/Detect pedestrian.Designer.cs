@@ -38,6 +38,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.labelFrames = new System.Windows.Forms.Label();
             this.numericUpDownFrames = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectPedestrian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectPedestrianResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrames)).BeginInit();
@@ -46,22 +47,22 @@
             // btnPauseVideo
             // 
             this.btnPauseVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPauseVideo.Location = new System.Drawing.Point(26, 164);
+            this.btnPauseVideo.Location = new System.Drawing.Point(26, 214);
             this.btnPauseVideo.Name = "btnPauseVideo";
             this.btnPauseVideo.Size = new System.Drawing.Size(214, 55);
             this.btnPauseVideo.TabIndex = 19;
-            this.btnPauseVideo.Text = "Pause";
+            this.btnPauseVideo.Text = "Пауза";
             this.btnPauseVideo.UseVisualStyleBackColor = true;
             this.btnPauseVideo.Click += new System.EventHandler(this.btnbtnPauseVideo_Click);
             // 
             // buttonPedestrianDetect
             // 
             this.buttonPedestrianDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPedestrianDetect.Location = new System.Drawing.Point(26, 103);
+            this.buttonPedestrianDetect.Location = new System.Drawing.Point(26, 129);
             this.buttonPedestrianDetect.Name = "buttonPedestrianDetect";
             this.buttonPedestrianDetect.Size = new System.Drawing.Size(214, 55);
             this.buttonPedestrianDetect.TabIndex = 17;
-            this.buttonPedestrianDetect.Text = "Recognize / Watch";
+            this.buttonPedestrianDetect.Text = "Распознать / Смотреть";
             this.buttonPedestrianDetect.UseVisualStyleBackColor = true;
             this.buttonPedestrianDetect.Click += new System.EventHandler(this.buttonPedestrianDetect_Click);
             // 
@@ -72,7 +73,7 @@
             this.buttonFileOpen.Name = "buttonFileOpen";
             this.buttonFileOpen.Size = new System.Drawing.Size(214, 55);
             this.buttonFileOpen.TabIndex = 16;
-            this.buttonFileOpen.Text = "Browse";
+            this.buttonFileOpen.Text = "Обзор";
             this.buttonFileOpen.UseVisualStyleBackColor = true;
             this.buttonFileOpen.Click += new System.EventHandler(this.buttonFileOpen_Click);
             // 
@@ -104,9 +105,9 @@
             // 
             // buttonRewindForward
             // 
-            this.buttonRewindForward.Location = new System.Drawing.Point(133, 225);
+            this.buttonRewindForward.Location = new System.Drawing.Point(133, 354);
             this.buttonRewindForward.Name = "buttonRewindForward";
-            this.buttonRewindForward.Size = new System.Drawing.Size(32, 23);
+            this.buttonRewindForward.Size = new System.Drawing.Size(32, 30);
             this.buttonRewindForward.TabIndex = 25;
             this.buttonRewindForward.Text = ">";
             this.buttonRewindForward.UseVisualStyleBackColor = true;
@@ -114,9 +115,9 @@
             // 
             // buttonRewindBack
             // 
-            this.buttonRewindBack.Location = new System.Drawing.Point(96, 225);
+            this.buttonRewindBack.Location = new System.Drawing.Point(96, 354);
             this.buttonRewindBack.Name = "buttonRewindBack";
-            this.buttonRewindBack.Size = new System.Drawing.Size(31, 23);
+            this.buttonRewindBack.Size = new System.Drawing.Size(31, 30);
             this.buttonRewindBack.TabIndex = 26;
             this.buttonRewindBack.Text = "<";
             this.buttonRewindBack.UseVisualStyleBackColor = true;
@@ -130,14 +131,14 @@
             // labelFrames
             // 
             this.labelFrames.AutoSize = true;
-            this.labelFrames.Location = new System.Drawing.Point(23, 228);
+            this.labelFrames.Location = new System.Drawing.Point(23, 359);
             this.labelFrames.Name = "labelFrames";
             this.labelFrames.Size = new System.Drawing.Size(0, 16);
             this.labelFrames.TabIndex = 27;
             // 
             // numericUpDownFrames
             // 
-            this.numericUpDownFrames.Location = new System.Drawing.Point(171, 225);
+            this.numericUpDownFrames.Location = new System.Drawing.Point(171, 357);
             this.numericUpDownFrames.Minimum = new decimal(new int[] {
             1,
             0,
@@ -152,11 +153,23 @@
             0,
             0});
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(26, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 55);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Очистить рабочие области";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Detect_pedestrian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 455);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDownFrames);
             this.Controls.Add(this.labelFrames);
             this.Controls.Add(this.buttonRewindBack);
@@ -167,8 +180,9 @@
             this.Controls.Add(this.buttonFileOpen);
             this.Controls.Add(this.pictureBoxDetectPedestrian);
             this.Name = "Detect_pedestrian";
-            this.Text = "Detect pedestrian";
+            this.Text = "Обнаружение пешеходов";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Detect_pedestrian_FormClosed);
+            this.Load += new System.EventHandler(this.Detect_pedestrian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectPedestrian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectPedestrianResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrames)).EndInit();
@@ -188,5 +202,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label labelFrames;
         private System.Windows.Forms.NumericUpDown numericUpDownFrames;
+        private System.Windows.Forms.Button button1;
     }
 }

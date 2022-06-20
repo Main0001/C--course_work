@@ -56,35 +56,35 @@
             // buttonFileOpen
             // 
             this.buttonFileOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFileOpen.Location = new System.Drawing.Point(34, 53);
+            this.buttonFileOpen.Location = new System.Drawing.Point(30, 53);
             this.buttonFileOpen.Name = "buttonFileOpen";
-            this.buttonFileOpen.Size = new System.Drawing.Size(200, 38);
+            this.buttonFileOpen.Size = new System.Drawing.Size(204, 38);
             this.buttonFileOpen.TabIndex = 2;
-            this.buttonFileOpen.Text = "Browse";
+            this.buttonFileOpen.Text = "Обзор";
             this.buttonFileOpen.UseVisualStyleBackColor = true;
             this.buttonFileOpen.Click += new System.EventHandler(this.buttonFileOpen_Click);
             // 
             // buttonFaceDetect
             // 
             this.buttonFaceDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFaceDetect.Location = new System.Drawing.Point(34, 163);
+            this.buttonFaceDetect.Location = new System.Drawing.Point(30, 163);
             this.buttonFaceDetect.Name = "buttonFaceDetect";
-            this.buttonFaceDetect.Size = new System.Drawing.Size(200, 38);
+            this.buttonFaceDetect.Size = new System.Drawing.Size(204, 38);
             this.buttonFaceDetect.TabIndex = 3;
-            this.buttonFaceDetect.Text = "Recognize";
+            this.buttonFaceDetect.Text = "Распознать";
             this.buttonFaceDetect.UseVisualStyleBackColor = true;
-            this.buttonFaceDetect.Click += new System.EventHandler(this.buttonFaceDetect_Click);
+            this.buttonFaceDetect.Click += new System.EventHandler(this.buttonObjectsDetect_Click);
             // 
             // buttonFaceDetectSave
             // 
             this.buttonFaceDetectSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFaceDetectSave.Location = new System.Drawing.Point(34, 219);
+            this.buttonFaceDetectSave.Location = new System.Drawing.Point(30, 219);
             this.buttonFaceDetectSave.Name = "buttonFaceDetectSave";
-            this.buttonFaceDetectSave.Size = new System.Drawing.Size(200, 38);
+            this.buttonFaceDetectSave.Size = new System.Drawing.Size(204, 38);
             this.buttonFaceDetectSave.TabIndex = 4;
-            this.buttonFaceDetectSave.Text = "Save result";
+            this.buttonFaceDetectSave.Text = "Сохранить результат";
             this.buttonFaceDetectSave.UseVisualStyleBackColor = true;
-            this.buttonFaceDetectSave.Click += new System.EventHandler(this.buttonFaceDetectSave_Click);
+            this.buttonFaceDetectSave.Click += new System.EventHandler(this.buttonObjectsDetectSave_Click);
             // 
             // openFileDialog1
             // 
@@ -94,30 +94,30 @@
             // btnClearPicture
             // 
             this.btnClearPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearPicture.Location = new System.Drawing.Point(34, 285);
+            this.btnClearPicture.Location = new System.Drawing.Point(30, 285);
             this.btnClearPicture.Name = "btnClearPicture";
-            this.btnClearPicture.Size = new System.Drawing.Size(200, 54);
+            this.btnClearPicture.Size = new System.Drawing.Size(204, 54);
             this.btnClearPicture.TabIndex = 5;
-            this.btnClearPicture.Text = "Clear working area";
+            this.btnClearPicture.Text = "Очистить рабочую область";
             this.btnClearPicture.UseVisualStyleBackColor = true;
             this.btnClearPicture.Click += new System.EventHandler(this.btnClearPicture_Click);
             // 
             // labelLanguage
             // 
             this.labelLanguage.AutoSize = true;
-            this.labelLanguage.Location = new System.Drawing.Point(31, 100);
+            this.labelLanguage.Location = new System.Drawing.Point(25, 100);
             this.labelLanguage.Name = "labelLanguage";
-            this.labelLanguage.Size = new System.Drawing.Size(78, 16);
+            this.labelLanguage.Size = new System.Drawing.Size(93, 16);
             this.labelLanguage.TabIndex = 16;
-            this.labelLanguage.Text = "Object type:";
+            this.labelLanguage.Text = "Тип объекта:";
             // 
             // comboBoxObjectDetect
             // 
             this.comboBoxObjectDetect.FormattingEnabled = true;
             this.comboBoxObjectDetect.Items.AddRange(new object[] {
-            "Face",
-            "Full body",
-            "Eyes"});
+            "Лицо",
+            "Тело в полный рост",
+            "Глаза"});
             this.comboBoxObjectDetect.Location = new System.Drawing.Point(124, 97);
             this.comboBoxObjectDetect.Name = "comboBoxObjectDetect";
             this.comboBoxObjectDetect.Size = new System.Drawing.Size(110, 24);
@@ -137,7 +137,7 @@
             this.Controls.Add(this.buttonFileOpen);
             this.Controls.Add(this.pictureBoxDetectFace);
             this.Name = "Detect_objects";
-            this.Text = "Detect face";
+            this.Text = "Обнаружение объектов";
             this.Load += new System.EventHandler(this.Detect_Face_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectFace)).EndInit();
             this.ResumeLayout(false);

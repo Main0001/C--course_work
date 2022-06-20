@@ -1,4 +1,5 @@
-﻿using Emgu.CV;
+﻿using MainForm.Constants;
+using Emgu.CV;
 using Emgu.CV.Structure;
 using System;
 using System.Drawing;
@@ -28,7 +29,7 @@ namespace MainForm.Forms
                 {
                     Button btn = (Button)btns;
                     btn.BackColor = ThemeColor.PrimaryColor; //Присвоит бэкграунд кнопке (определенного цвета)
-                    btn.ForeColor = Color.White;
+                    btn.ForeColor = FormConstants.BUTTON_ACTIVATE_FORE_COLOR;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
@@ -52,7 +53,7 @@ namespace MainForm.Forms
             }
         }
 
-        private void buttonFaceDetect_Click(object sender, EventArgs e)
+        private void buttonObjectsDetect_Click(object sender, EventArgs e)
         {
             try
             {
@@ -88,14 +89,22 @@ namespace MainForm.Forms
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void buttonFaceDetectSave_Click(object sender, EventArgs e)
+        private void buttonObjectsDetectSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "PNG|*.png|JPG|*.jpg";
-            ImageFormat format = ImageFormat.Jpeg;
-            if (sfd.ShowDialog() == DialogResult.OK)
+            try
             {
-                pictureBoxDetectFace.Image.Save(sfd.FileName, format);
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = FormConstants.FILTER;
+                ImageFormat format = FormConstants.FORMAT;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxDetectFace.Image.Save(sfd.FileName, format);
+                    MessageBox.Show("Данный результат успешно сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Данный результат не удалось сохранить", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

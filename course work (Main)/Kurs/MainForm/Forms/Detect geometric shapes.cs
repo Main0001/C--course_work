@@ -1,4 +1,5 @@
-﻿using Emgu.CV;
+﻿using MainForm.Constants;
+using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
 using System;
@@ -11,7 +12,7 @@ namespace MainForm.Forms
     public partial class Detect_geometric_shapes : Form
     {
         private Image<Bgr, byte> inputImage = null;
-        private int count = 0;
+        private int count = FormConstants.COUNT;
         private string filePath = string.Empty;
         public Detect_geometric_shapes()
         {
@@ -29,7 +30,7 @@ namespace MainForm.Forms
                 {
                     Button btn = (Button)btns;
                     btn.BackColor = ThemeColor.PrimaryColor; //Присвоит бэкграунд кнопке (определенного цвета)
-                    btn.ForeColor = Color.White;
+                    btn.ForeColor = FormConstants.BUTTON_ACTIVATE_FORE_COLOR;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
@@ -44,7 +45,7 @@ namespace MainForm.Forms
                     filePath = openFileDialog1.FileName;
                     inputImage = new Image<Bgr, byte>(filePath);
                     pictureBoxDetectGeometricShapes.Image = inputImage.Bitmap;
-                    count = 0;
+                    count = FormConstants.COUNT;
                 }
             }
             catch (Exception ex)
@@ -130,12 +131,20 @@ namespace MainForm.Forms
 
         private void buttonGeometricShapesDetectSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "PNG|*.png|JPG|*.jpg";
-            ImageFormat format = ImageFormat.Jpeg;
-            if (sfd.ShowDialog() == DialogResult.OK)
+            try
             {
-                pictureBoxDetectGeometricShapes.Image.Save(sfd.FileName, format);
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = FormConstants.FILTER;
+                ImageFormat format = FormConstants.FORMAT;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxDetectGeometricShapes.Image.Save(sfd.FileName, format);
+                    MessageBox.Show("Данный результат успешно сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Данный результат не удалось сохранить", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -143,7 +152,7 @@ namespace MainForm.Forms
         {
             pictureBoxDetectGeometricShapes.Image = null;
             filePath = string.Empty;
-            count = 0;
+            count = FormConstants.COUNT;
         }
     }
 }

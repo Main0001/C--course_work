@@ -1,4 +1,5 @@
-﻿using Emgu.CV;
+﻿using MainForm.Constants;
+using Emgu.CV;
 using Emgu.CV.Structure;
 using System;
 using System.Drawing;
@@ -34,6 +35,25 @@ namespace MainForm.Forms
             }
             return image;
         }
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls) //panelMenu.Controls - возвращает все управляющие элементы (кнопки, радиобаттоны и т.д.)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor; //Присвоит бэкграунд кнопке (определенного цвета)
+                    btn.ForeColor = FormConstants.BUTTON_ACTIVATE_FORE_COLOR;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
+
+        private void Detect_pedestrian_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
+
         private async void ReadFrames()
         {
             Mat m = new Mat();
@@ -146,6 +166,15 @@ namespace MainForm.Forms
         private void Detect_pedestrian_FormClosed(object sender, FormClosedEventArgs e)
         {
             play = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            play = false;
+            pictureBoxDetectPedestrian.Image = null;
+            pictureBoxDetectPedestrianResult.Image = null;
+            labelFrames.Text = String.Empty;
+            capture = null;
         }
     }
 }
