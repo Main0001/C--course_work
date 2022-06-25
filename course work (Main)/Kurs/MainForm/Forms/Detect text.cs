@@ -15,6 +15,7 @@ namespace MainForm.Forms
         public Detect_text()
         {
             InitializeComponent();
+            comboBoxDetectText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
         private void Detect_text_Load(object sender, EventArgs e)
         {

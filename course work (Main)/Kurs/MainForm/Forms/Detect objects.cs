@@ -15,6 +15,7 @@ namespace MainForm.Forms
         public Detect_objects()
         {
             InitializeComponent();
+            comboBoxObjectDetect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
         private void Detect_Face_Load(object sender, EventArgs e)
         {
