@@ -16,6 +16,7 @@ namespace MainForm.Forms
         {
             InitializeComponent();
             comboBoxDetectText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            richTextBoxDetectText.ReadOnly = true;
         }
         private void Detect_text_Load(object sender, EventArgs e)
         {
@@ -89,6 +90,7 @@ namespace MainForm.Forms
                     richTextBoxDetectText.Text = tesseract.GetUTF8Text();
 
                     tesseract.Dispose(); //Т.к. при нажатии кнопки будет создаваться новый объект, то Dispose очищает (отдает) все ресурсы которые использовались
+                    richTextBoxDetectText.ReadOnly = false;
                 }
             }
             catch (Exception ex)
@@ -120,6 +122,25 @@ namespace MainForm.Forms
         private void btnClearText_Click(object sender, EventArgs e)
         {
             richTextBoxDetectText.Text = null;
+        }
+
+        private void buttonTextDetectSaveInTXT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "txt|*.txt";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    richTextBoxDetectText.SaveFile(sfd.FileName, RichTextBoxStreamType.PlainText);
+                    MessageBox.Show("Данный результат успешно сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Данный результат не удалось сохранить", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

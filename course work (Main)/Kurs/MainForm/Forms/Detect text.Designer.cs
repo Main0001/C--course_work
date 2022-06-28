@@ -38,13 +38,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.comboBoxDetectText = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
+            this.buttonTextDetectSaveInTXT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectText)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClearPicture
             // 
             this.btnClearPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearPicture.Location = new System.Drawing.Point(30, 250);
+            this.btnClearPicture.Location = new System.Drawing.Point(30, 262);
             this.btnClearPicture.Name = "btnClearPicture";
             this.btnClearPicture.Size = new System.Drawing.Size(200, 54);
             this.btnClearPicture.TabIndex = 10;
@@ -55,7 +56,7 @@
             // buttonTextDetectSave
             // 
             this.buttonTextDetectSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTextDetectSave.Location = new System.Drawing.Point(30, 184);
+            this.buttonTextDetectSave.Location = new System.Drawing.Point(30, 210);
             this.buttonTextDetectSave.Name = "buttonTextDetectSave";
             this.buttonTextDetectSave.Size = new System.Drawing.Size(200, 46);
             this.buttonTextDetectSave.TabIndex = 9;
@@ -66,7 +67,7 @@
             // buttonTextDetect
             // 
             this.buttonTextDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTextDetect.Location = new System.Drawing.Point(30, 105);
+            this.buttonTextDetect.Location = new System.Drawing.Point(30, 114);
             this.buttonTextDetect.Name = "buttonTextDetect";
             this.buttonTextDetect.Size = new System.Drawing.Size(200, 38);
             this.buttonTextDetect.TabIndex = 8;
@@ -113,7 +114,7 @@
             // btnClearText
             // 
             this.btnClearText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearText.Location = new System.Drawing.Point(30, 325);
+            this.btnClearText.Location = new System.Drawing.Point(30, 322);
             this.btnClearText.Name = "btnClearText";
             this.btnClearText.Size = new System.Drawing.Size(200, 54);
             this.btnClearText.TabIndex = 12;
@@ -133,7 +134,7 @@
             "Русский",
             "Английский",
             "Немецкий"});
-            this.comboBoxDetectText.Location = new System.Drawing.Point(109, 149);
+            this.comboBoxDetectText.Location = new System.Drawing.Point(109, 84);
             this.comboBoxDetectText.Name = "comboBoxDetectText";
             this.comboBoxDetectText.Size = new System.Drawing.Size(121, 24);
             this.comboBoxDetectText.TabIndex = 13;
@@ -142,17 +143,29 @@
             // labelLanguage
             // 
             this.labelLanguage.AutoSize = true;
-            this.labelLanguage.Location = new System.Drawing.Point(31, 152);
+            this.labelLanguage.Location = new System.Drawing.Point(31, 87);
             this.labelLanguage.Name = "labelLanguage";
             this.labelLanguage.Size = new System.Drawing.Size(44, 16);
             this.labelLanguage.TabIndex = 14;
             this.labelLanguage.Text = "Язык:";
+            // 
+            // buttonTextDetectSaveInTXT
+            // 
+            this.buttonTextDetectSaveInTXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTextDetectSaveInTXT.Location = new System.Drawing.Point(30, 158);
+            this.buttonTextDetectSaveInTXT.Name = "buttonTextDetectSaveInTXT";
+            this.buttonTextDetectSaveInTXT.Size = new System.Drawing.Size(200, 46);
+            this.buttonTextDetectSaveInTXT.TabIndex = 15;
+            this.buttonTextDetectSaveInTXT.Text = "Сохранить результат в txt документ";
+            this.buttonTextDetectSaveInTXT.UseVisualStyleBackColor = true;
+            this.buttonTextDetectSaveInTXT.Click += new System.EventHandler(this.buttonTextDetectSaveInTXT_Click);
             // 
             // Detect_text
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1065, 455);
+            this.Controls.Add(this.buttonTextDetectSaveInTXT);
             this.Controls.Add(this.labelLanguage);
             this.Controls.Add(this.comboBoxDetectText);
             this.Controls.Add(this.btnClearText);
@@ -164,7 +177,7 @@
             this.Controls.Add(this.pictureBoxDetectText);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "Detect_text";
-            this.Text = "Распознание текста";
+            this.Text = "Считывание текста";
             this.Load += new System.EventHandler(this.Detect_text_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetectText)).EndInit();
             this.ResumeLayout(false);
@@ -184,5 +197,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox comboBoxDetectText;
         private System.Windows.Forms.Label labelLanguage;
+        private System.Windows.Forms.Button buttonTextDetectSaveInTXT;
     }
 }

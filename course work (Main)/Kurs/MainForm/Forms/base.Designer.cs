@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonAboutProgram = new System.Windows.Forms.Button();
             this.buttonDetectPedestrian = new System.Windows.Forms.Button();
             this.btnDetectText = new System.Windows.Forms.Button();
             this.btnDetectGeometricShapes = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.labelDetectTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.buttonAboutProgram = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -63,8 +63,27 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(309, 439);
+            this.panelMenu.Size = new System.Drawing.Size(309, 441);
             this.panelMenu.TabIndex = 0;
+            // 
+            // buttonAboutProgram
+            // 
+            this.buttonAboutProgram.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAboutProgram.FlatAppearance.BorderSize = 0;
+            this.buttonAboutProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAboutProgram.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonAboutProgram.Image = ((System.Drawing.Image)(resources.GetObject("buttonAboutProgram.Image")));
+            this.buttonAboutProgram.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAboutProgram.Location = new System.Drawing.Point(0, 375);
+            this.buttonAboutProgram.Name = "buttonAboutProgram";
+            this.buttonAboutProgram.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonAboutProgram.Size = new System.Drawing.Size(309, 60);
+            this.buttonAboutProgram.TabIndex = 8;
+            this.buttonAboutProgram.Text = "О программе";
+            this.buttonAboutProgram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAboutProgram.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAboutProgram.UseVisualStyleBackColor = true;
+            this.buttonAboutProgram.Click += new System.EventHandler(this.buttonAboutProgram_Click);
             // 
             // buttonDetectPedestrian
             // 
@@ -98,7 +117,7 @@
             this.btnDetectText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetectText.Size = new System.Drawing.Size(309, 60);
             this.btnDetectText.TabIndex = 6;
-            this.btnDetectText.Text = "Обнаружение текста на  изображении";
+            this.btnDetectText.Text = "Считывание текста из  изображения\r\n";
             this.btnDetectText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetectText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetectText.UseVisualStyleBackColor = true;
@@ -274,33 +293,14 @@
             this.panelDesktop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelDesktop.Location = new System.Drawing.Point(309, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(692, 364);
+            this.panelDesktop.Size = new System.Drawing.Size(692, 366);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // buttonAboutProgram
-            // 
-            this.buttonAboutProgram.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAboutProgram.FlatAppearance.BorderSize = 0;
-            this.buttonAboutProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAboutProgram.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonAboutProgram.Image = ((System.Drawing.Image)(resources.GetObject("buttonAboutProgram.Image")));
-            this.buttonAboutProgram.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAboutProgram.Location = new System.Drawing.Point(0, 375);
-            this.buttonAboutProgram.Name = "buttonAboutProgram";
-            this.buttonAboutProgram.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonAboutProgram.Size = new System.Drawing.Size(309, 60);
-            this.buttonAboutProgram.TabIndex = 8;
-            this.buttonAboutProgram.Text = "О программе";
-            this.buttonAboutProgram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAboutProgram.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAboutProgram.UseVisualStyleBackColor = true;
-            this.buttonAboutProgram.Click += new System.EventHandler(this.buttonAboutProgram_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 439);
+            this.ClientSize = new System.Drawing.Size(1001, 441);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
